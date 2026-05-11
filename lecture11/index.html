@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*var can be accesed from anywhere in and out of the block
+        unlike the let one.*/
+        // var a=10
+        // {
+        //     console.log(a)
+        //    var b=20
+           
+        // }
+        // console.log(b)
+        //this keyword->
+        // var name="abhi"
+        // let student={//object->having multiple values a function can be declared in objects and are called methods
+        //     id:1,//here key is id and it can not be repeated
+        //     name:"abhijeet",
+        //     isPass:true,
+        //     sum:function(){
+        //         console.log("helllo world")
+        //         console.log(this.name)
+         //   }
+       // }
+        //loops can be applies in objects
+        // for(let a in student){
+        //     console.log(student[a])
+        // }
+        // console.log(this.name)//this keyword arrow function ke liye kaam nahi karta h
+
+        // student.sum()
+         var name="abhi"
+        let student={
+            id:1,
+            name:"abhijeet",
+            isPass:true,
+            sum:()=>{           
+                console.log(this.name)
+            }
+        }
+        student.sum()
+        
+    </script>
+</body>
+</html>
