@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -34,17 +34,40 @@
         // console.log(this.name)//this keyword arrow function ke liye kaam nahi karta h
 
         // student.sum()
-         var name="abhi"
-        let student={
-            id:1,
-            name:"abhijeet",
-            isPass:true,
-            sum:()=>{           
-                console.log(this.name)
-            }
-        }
-        student.sum()
+        //  var name="abhi"
+        // let student={
+        //     id:1,
+        //     name:"abhijeet",
+        //     isPass:true,
+        //     sum:()=>{           
+        //         console.log(this.name)
+        //     }
+        // }
+        // student.sum()
         
     </script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>add</button>
+    <h2></h2>
+   
+   <script>let btn=document.querySelector("button")
+let body=document.querySelector("body")
+let h2=document.querySelector("h2")
+let data=prompt("enter user name")
+console.log(data);
+h2.innerText="hello"+" "+data
+btn.addEventListener("click",function(){
+    body.style.backgroundColor="cyan"
+    
+})</script>
 </body>
 </html>
