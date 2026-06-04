@@ -1,0 +1,78 @@
+import React from 'react'
+
+const Home = () => {
+  return (
+      <div className="page">
+
+      <div className="hero">
+        <h1>Dashboard Overview</h1>
+        <p>Monitor progress, tasks, and system activity in one place.</p>
+      </div>
+
+      {/* STATS */}
+      <div className="stats">
+        <div className="card blue">
+          <h2>18</h2>
+          <p>Active Tasks</p>
+        </div>
+
+        <div className="card green">
+          <h2>9</h2>
+          <p>Completed</p>
+        </div>
+
+        <div className="card purple">
+          <h2>4</h2>
+          <p>Pending Review</p>
+        </div>
+
+        <div className="card orange">
+          <h2>2</h2>
+          <p>Overdue</p>
+        </div>
+      </div>
+
+      {/* TASK LIST PREVIEW */}
+      <div className="section">
+        <h2>Recent Tasks</h2>
+
+        <div className="taskList">
+          <div className="taskItem">
+            <span>Build Navbar UI improvements</span>
+            <small>High Priority</small>
+          </div>
+
+          <div className="taskItem">
+            <span>Fix routing bug in Task page</span>
+            <small>Medium Priority</small>
+          </div>
+
+          <div className="taskItem">
+            <span>Improve About page layout</span>
+            <small>Low Priority</small>
+          </div>
+
+          <div className="taskItem">
+            <span>API integration for tasks</span>
+            <small>High Priority</small>
+          </div>
+        </div>
+      </div>
+
+      {/* QUICK ACTIONS */}
+      <div className="section">
+        <h2>Quick Actions</h2>
+
+        <div className="actionGrid">
+          <div className="action">➕ Add New Task</div>
+          <div className="action">📊 Analytics</div>
+          <div className="action">🔍 Search Tasks</div>
+          <div className="action">⚙️ Settings</div>
+        </div>
+      </div>
+
+    </div>
+  )
+}
+
+export default Home
