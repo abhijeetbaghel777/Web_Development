@@ -152,15 +152,77 @@
 // }
 
 // export default App
-import React from 'react'
-import UseRed from './UseRed'
+// import React from 'react'
+// import UseRed from './UseRed'
+
+// const App = () => {
+//   return (
+//     <div>
+//       <UseRed/>
+//     </div>
+//   )
+// }
+
+// export default App
+// import React from 'react'
+// import New from './New'
+
+// const App = () => {
+//   return (
+//     <div><New/></div>
+//   )
+// }
+
+// export default App
+import React, { useMemo ,memo} from 'react'
+import useCounter from './useCounter'
 
 const App = () => {
+  let {count,inc,dec,reset}=useCounter(0)
+  // function call(){
+  //   let res=0
+  //   for(let i=0;i<1000000000;i++){
+  //     res=res+1;
+  //   }
+  //   return res
+  // }
+  // let total=call()
+  /** here since we have used usestate for count the website is reloaded at every reload
+   * causing delay by the calculation
+   * now use useMemo it is similaar to useeffect but useeffects do not returns anything while as
+   * useMemo does
+   */
+  // let total=useMemo(()=>{
+  //   let res=0
+  //   for(let i=0;i<1000000000;i++){
+  //     res+=i
+  //   }
+  //   return res
+  // },[])
   return (
     <div>
-      <UseRed/>
-    </div>
+      <h4>{count}</h4>
+      <button onClick={inc}>++</button>
+      {/* <button onClick={dec}>--</button>
+      <button onClick={reset}>reset</button> */}
+
+     <Child/></div>
   )
 }
+
+// const Child = () => {
+//   console.log("hello")
+//   return (
+//     <div>hello</div>
+//   )
+// }
+let Child=memo(function(){
+  console.log("hello")
+  return(
+    <></>
+  )
+})
+
+
 
 export default App
