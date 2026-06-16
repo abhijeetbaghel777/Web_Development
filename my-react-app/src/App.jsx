@@ -174,55 +174,89 @@
 // }
 
 // export default App
-import React, { useMemo ,memo} from 'react'
-import useCounter from './useCounter'
+// import React, { useMemo ,memo} from 'react'
+// import useCounter from './useCounter'
 
-const App = () => {
-  let {count,inc,dec,reset}=useCounter(0)
-  // function call(){
-  //   let res=0
-  //   for(let i=0;i<1000000000;i++){
-  //     res=res+1;
-  //   }
-  //   return res
-  // }
-  // let total=call()
-  /** here since we have used usestate for count the website is reloaded at every reload
-   * causing delay by the calculation
-   * now use useMemo it is similaar to useeffect but useeffects do not returns anything while as
-   * useMemo does
-   */
-  // let total=useMemo(()=>{
-  //   let res=0
-  //   for(let i=0;i<1000000000;i++){
-  //     res+=i
-  //   }
-  //   return res
-  // },[])
-  return (
-    <div>
-      <h4>{count}</h4>
-      <button onClick={inc}>++</button>
-      {/* <button onClick={dec}>--</button>
-      <button onClick={reset}>reset</button> */}
-
-     <Child/></div>
-  )
-}
-
-// const Child = () => {
-//   console.log("hello")
+// const App = () => {
+//   let {count,inc,dec,reset}=useCounter(0)
+//   // function call(){
+//   //   let res=0
+//   //   for(let i=0;i<1000000000;i++){
+//   //     res=res+1;
+//   //   }
+//   //   return res
+//   // }
+//   // let total=call()
+//   /** here since we have used usestate for count the website is reloaded at every reload
+//    * causing delay by the calculation
+//    * now use useMemo it is similaar to useeffect but useeffects do not returns anything while as
+//    * useMemo does
+//    */
+//   // let total=useMemo(()=>{
+//   //   let res=0
+//   //   for(let i=0;i<1000000000;i++){
+//   //     res+=i
+//   //   }
+//   //   return res
+//   // },[])
 //   return (
-//     <div>hello</div>
+//     <div>
+//       <h4>{count}</h4>
+//       <button onClick={inc}>++</button>
+//       {/* <button onClick={dec}>--</button>
+//       <button onClick={reset}>reset</button> */}
+
+//      <Child/></div>
 //   )
 // }
-let Child=memo(function(){
-  console.log("hello")
-  return(
-    <></>
+
+// // const Child = () => {
+// //   console.log("hello")
+// //   return (
+// //     <div>hello</div>
+// //   )
+// // }
+// let Child=memo(function(){
+//   console.log("hello")
+//   return(
+//     <></>
+//   )
+// })
+
+
+
+// export default App
+// import React from 'react'
+// import Home from "./Home"
+// import Cart from './Cart'
+
+// const App = () => {
+//   return (
+//     <div>
+//       <Home/>
+//       <Cart/>
+//     </div>
+//   )
+// }
+import { memo, useMemo, useState } from "react"
+import useCounter from "./useCounter"
+// export default App
+import React from 'react'
+import UserList from "./UserList"
+import { Route, Routes } from "react-router-dom"
+import UserProfile from "./UserProfile"
+
+const App = () => {
+  return (
+    <div >
+     {/* http://localhost:5173/profile/0 */}
+      <Routes>
+        <Route   path="/"   element={ <UserList/>}/>
+        <Route   path="/profile/:id"   element={ <UserProfile/>}/>
+
+      </Routes>
+    </div>
   )
-})
-
-
+}
 
 export default App
